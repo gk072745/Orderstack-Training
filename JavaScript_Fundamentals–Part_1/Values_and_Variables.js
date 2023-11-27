@@ -7,7 +7,7 @@ let population;
 
 country = "India";
 continent = "Asia";
-population = "130+ Cr";
+population = "1300+ million";
 
 // 2. Log their values to the console
 // first way
