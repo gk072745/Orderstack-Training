@@ -12,22 +12,14 @@ function diamondPattern(n) {
         if (j < n - i - 1 || j > n + i - 1) {
           patternLine += " ";
         } else {
-          if (flag) {
-            patternLine += " ";
-          } else {
-            patternLine += "*";
-          }
+          flag ? (patternLine += " ") : (patternLine += "*");
           flag = !flag;
         }
       } else {
         if (j < i - n + 1 || j > 2 * n - 2 - (i + 1 - n)) {
           patternLine += " ";
         } else {
-          if (flag) {
-            patternLine += " ";
-          } else {
-            patternLine += "*";
-          }
+          flag ? (patternLine += " ") : (patternLine += "*");
           flag = !flag;
         }
       }
