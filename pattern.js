@@ -20,7 +20,7 @@ function diamondPattern(n) {
           flag = !flag;
         }
       } else {
-        if (j < i - n + 1 || j > 2 * n + 2 - i) {
+        if (j < i - n + 1 || j > 2 * n - 2 - (i + 1 - n)) {
           patternLine += " ";
         } else {
           if (flag) {
@@ -36,4 +36,12 @@ function diamondPattern(n) {
   }
 }
 
+diamondPattern(1);
+diamondPattern(2);
+diamondPattern(3);
+diamondPattern(4);
 diamondPattern(5);
+diamondPattern(6);
+diamondPattern(7);
+diamondPattern(8);
+diamondPattern(9);
