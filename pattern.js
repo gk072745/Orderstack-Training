@@ -1,7 +1,5 @@
 // // Problem statement: Given a number n, write a JavaScript program to print a diamond star pattern of 2n - 1 rows.
 
-let n = 5;
-
 function diamondPattern(n) {
   for (let i = 0; i < 2 * n - 1; i++) {
     let patternLine = "";
