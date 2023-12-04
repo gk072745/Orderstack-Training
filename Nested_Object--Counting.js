@@ -41,9 +41,7 @@ const countedEmp = {};
 
 const countEmployeesByRole = ({ role, subordinates }) => {
 
-
   countedEmp[role] = (countedEmp[role] || 0) + 1;
-  if (subordinates.length === 0) return;
 
   subordinates.forEach(subords => countEmployeesByRole(subords));
 
