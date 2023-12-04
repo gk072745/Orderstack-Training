@@ -40,15 +40,12 @@ const company = {
 const countedEmp = {};
 
 const countEmployeesByRole = ({ role, subordinates }) => {
-  if (subordinates.length === 0) {
-    return;
-  }
+
+  if (subordinates.length === 0) return;
 
   countedEmp[role] = (countedEmp[role] || 0) + 1;
 
-  subordinates.forEach((subords) => {
-    countEmployeesByRole(subords);
-  });
+  subordinates.forEach(subords => countEmployeesByRole(subords));
 
   return countedEmp;
 };
