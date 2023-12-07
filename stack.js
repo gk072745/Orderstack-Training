@@ -24,7 +24,7 @@ class Stack {
         return this.#data[--this.#length]
     }
 
-    //Getting pick element in the Stack
+    //Getting peak element in the Stack
     top() {
         return this.#length === 0 ? "Empty Stack!" : this.#data[this.#length - 1];
     }
