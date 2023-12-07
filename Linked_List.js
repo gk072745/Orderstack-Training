@@ -87,6 +87,13 @@ class LinkedList {
     return this
   }
 
+  //delete whole list
+  clear() {
+    this.#head = null
+    this.#size = 0
+    return this
+  }
+
   //empty
   isEmpty() {
     console.log(this.#size === 0)
@@ -94,8 +101,8 @@ class LinkedList {
   }
 
   //size
-  get size() {
-    console.log(this.#size)
+  size() {
+    console.log('size:', this.#size)
     return this
   }
 
@@ -137,5 +144,6 @@ linkedlist.add(5);
 linkedlist.insert(4, 3);
 
 linkedlist.prindList()
-console.log("size: ", linkedlist.size);
+linkedlist.size()
 linkedlist.printAt(4)
+linkedlist.clear()
