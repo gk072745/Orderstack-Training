@@ -1,42 +1,45 @@
-class Stack {
-    //private props
-    #length
-    #data
-    #maxSize
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
 
-    constructor(size) {
-        this.#length = 0;
-        this.#data = {}
-        size > 0 && (this.#maxSize = size)
+    }
+}
+
+// constructor for linkedlist
+class Stack {
+
+    constructor() {
+        this.head = null;
+        this.size = 0
     }
 
     //Inserting elements in the Stack 
     push(ele) {
-        if (this.#maxSize <= this.#length) return "Overflow: Stack is full!!!"
-        this.#data[this.#length++] = ele;
-        return this;
+        let node = new Node(ele)
+        node.next = this.head
+        this.head = node
+        return this.head
     }
 
     //Removing elements from the Stack
     pop() {
-        if (this.#length === 0) return "Underflow: Stack is empty!!!";
+        if (this.head === null) return "Underflow: Stack is empty!!!";
 
-        return this.#data[--this.#length]
+        let poppedEle = this.head.data
+        this.head = this.head.next
+
+        return poppedEle
     }
 
     //Getting peak element in the Stack
     top() {
-        return this.#length === 0 ? "Empty Stack!" : this.#data[this.#length - 1];
+        return this.head.data
     }
 
     //Checking if empty or not
     isEmpty() {
-        return this.#length === 0
-    }
-
-    //Checking size of the Stack
-    get size() {
-        return this.#length
+        return this.head === null
     }
 
 
@@ -47,20 +50,13 @@ const stack1 = new Stack(3);
 stack1.push(1);
 stack1.push(2);
 stack1.push(3);
+stack1.push(4);
 
-console.log(stack1.push(4))
-
-console.log(stack1.top())
-console.log(stack1.pop())
-
+stack1.pop()
 console.log(stack1.isEmpty())
-console.log(stack1.size)
 
 console.log(stack1.pop())
 console.log(stack1.pop())
-
 console.log(stack1.pop())
-
 console.log(stack1.isEmpty())
-console.log(stack1.size)
 
