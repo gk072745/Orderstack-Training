@@ -43,9 +43,10 @@ const company = [
 ];
 
 
-
+// finding rootEmployee...
 const rootEmployee = company.find(({ parent }) => parent === undefined)
 
+// creating subordinates using recurstion.....
 const createEmpHierarchy = (company, id) => {
 
     const subordinates =
@@ -59,6 +60,7 @@ const createEmpHierarchy = (company, id) => {
 
 }
 
+// root object with root emplyee and subordinates
 const employeeHierarchy = { ...rootEmployee, subordinates: createEmpHierarchy(company, rootEmployee.id) }
 
 
