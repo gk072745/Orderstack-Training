@@ -53,7 +53,9 @@ const createEmpHierarchy = (company, id) => {
         company
             .filter(({ parent }) => parent === id)
             .map((emp) => {
-                return { ...emp, subordinates: createEmpHierarchy(company, emp.id) }
+                let subordinary = { ...emp, subordinates: createEmpHierarchy(company, emp.id) }
+                delete subordinary.parent
+                return subordinary
             })
 
     return subordinates
