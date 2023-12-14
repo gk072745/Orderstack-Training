@@ -7,6 +7,12 @@ const app = Vue.createApp({
             // now i want to send a link as data....
             vueLink: "https://vuejs.org/"
         };
+    },
+    methods: {
+        outputGoal() {
+            const randomNum = Math.random();
+            return randomNum < 0.5 ? "Learn Vue" : "master Vue"
+        }
     }
 });
 
