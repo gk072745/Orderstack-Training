@@ -50,7 +50,7 @@
       <!-- <form v-on:submit="submitForm">
       <input type="text">
       <button>Sign Up</button>
-      
+
      </form> -->
 
       <!-- using Vue.js way called event modifier -->
@@ -67,6 +67,10 @@
       <button v-on:click.middle="reduce(5)">Remove</button>
       <button v-on:click.right="add(5)">Add</button>
       <p>Result: {{ counter }}</p>
+
+      <!-- ..................................... -->
+      <!-- some values if we dont want to change ever...v-once-->
+      <p v-once>starting counter:{{counter}}</p>
     </section>
   </body>
 </html>
