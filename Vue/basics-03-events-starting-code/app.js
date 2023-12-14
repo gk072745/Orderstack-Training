@@ -2,7 +2,8 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ""
+      name: "",
+      confirmedName: ""
     };
   },
   // we write methods not for funcitons but also we add methods for like vue call when we need.
@@ -13,8 +14,8 @@ const app = Vue.createApp({
 
     reduce(num) {
       this.counter -= num
-
     },
+
 
     //............................ 
     // setName(e) {
@@ -23,7 +24,21 @@ const app = Vue.createApp({
     // now if i also need to pass some arguments for that syntax
     setName(e, lastName) {
       this.name = `${e.target.value} ${lastName}`
-    }
+    },
+
+    confirmInput() {
+      this.confirmedName = this.name
+    },
+
+    // remove default browser behavior for forms
+    // submitForm(e) {
+    //   e.preventDefault()
+    // },
+
+    /* vue has a batter way for that check html */
+    submitForm(e) {
+
+    },
   }
 });
 
