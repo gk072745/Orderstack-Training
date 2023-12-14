@@ -17,26 +17,8 @@
   </header>
   <section id="user-goal">
     <h2>My Course Goal</h2>
-    <p>
-      <!-- data directly -->
-      {{courseGoalA}}
-    </p>
-    <p>
-      <!-- method directly interpolation-->
-      {{outputGoal()}}
-    </p>
-    <!-- v-html for html interpolation -->
-    <p v-html="outputGoal()">
-
-    </p>
-    <p>
-      <!-- for links we directly cant add like href="{{vueLink}}" 
-        but we can do vue binding for that bind  -->
-      Learn more
-
-      <!-- v-bind -->
-      <a v-bind:href="vueLink">about Vue</a>
-    </p>
+    <p>{{ courseGoal }}</p>
+    <p>Learn more <a v-bind:href="vueLink">about Vue</a></p>
   </section>
 </body>
 
