@@ -6,12 +6,13 @@ const app = Vue.createApp({
   },
   // we write methods not for funcitons but also we add methods for like vue call when we need.
   methods: {
-    add() {
-      this.counter++
+    add(num) {
+      this.counter += num
     },
 
-    reduce() {
-      this.counter--
+    reduce(num) {
+      this.counter -= num
+
     }
   }
 });

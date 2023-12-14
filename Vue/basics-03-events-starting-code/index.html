@@ -19,8 +19,9 @@
     <h2>Events in Action</h2>
     <!-- add event listenrs for atributes we use v-bind directer but for event we use v-on:eventName || we can write js also like I did 
       -->
-    <button v-on:click="add()">Add</button>
-    <button v-on:click="reduce()">Remove</button>
+    <!-- we can do like v-on:click="add" & we also can do if we need to pass args like add(num) -->
+    <button v-on:click="add(5)">Add</button>
+    <button v-on:click="reduce(5)">Remove</button>
     <p>Result: {{ counter }}</p>
   </section>
 </body>
