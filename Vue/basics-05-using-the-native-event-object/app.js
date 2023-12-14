@@ -18,6 +18,11 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = ""
+    },
+
+    // ................now if we want full name instead of start name
+    fullName() {
+      return this.name ? this.name + " " + "Kumar" : ""
     }
   }
 });
