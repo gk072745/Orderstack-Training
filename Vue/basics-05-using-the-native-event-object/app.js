@@ -3,15 +3,26 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      fullName: ""
     };
   },
-  // dont call unnecessary, improve performance...
-  computed: {
-    fullName() {
-      console.log(this.name)
-      return this.name ? this.name + " " + "Kumar" : ""
+  // watcher methods........................
+  // value = this.name
+  watch: {
+    // one args...letest value
+    // name(newValue,oldValue) two args....
+    name(value) {
+      this.fullName = value ? value + " " + "Kumar" : ""
     }
   },
+
+  // dont call unnecessary, improve performance...
+  // computed: {
+  //   fullName() {
+  //     console.log(this.name)
+  //     return this.name ? this.name + " " + "Kumar" : ""
+  //   }
+  // },
 
   methods: {
     setName(event) {
