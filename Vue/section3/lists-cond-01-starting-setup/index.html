@@ -29,12 +29,22 @@
         type="text"
         v-model="goal" />
       <button @click="addGoal">Add Goal</button>
-      <p v-if="goals.length===0">
+      <!-- v-if|| v-if-v-else -->
+      <!-- <p v-if="goals.length===0">
         No goals have been added yet - please start adding some!
       </p>
       <ul v-else>
         <li>Goal</li>
+      </ul> -->
+      <!-- ................................... -->
+      <!-- v-show stand alone -->
+      <p v-show="goals.length===0">
+        No goals have been added yet - please start adding some!
+      </p>
+      <ul v-show="goals.length>0">
+        <li>Goal</li>
       </ul>
+      <!--v-show if condition false display is none we dont remove element from the dom...so we need to use this whe nwe have many changes in that element  -->
     </section>
   </body>
 </html>
