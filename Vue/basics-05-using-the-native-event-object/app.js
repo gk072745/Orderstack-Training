@@ -2,9 +2,17 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
     };
   },
+  // dont call unnecessary, improve performance...
+  computed: {
+    fullName() {
+      console.log(this.name)
+      return this.name ? this.name + " " + "Kumar" : ""
+    }
+  },
+
   methods: {
     setName(event) {
       this.name = event.target.value
@@ -21,10 +29,12 @@ const app = Vue.createApp({
     },
 
     // ................now if we want full name instead of start name
-    fullName() {
+    outputFullname() {
       return this.name ? this.name + " " + "Kumar" : ""
     }
-  }
+
+  },
+
 });
 
 app.mount('#events');
