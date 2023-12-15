@@ -13,6 +13,12 @@ const app = Vue.createApp({
             if (box === "B") this.boxBSelected = !this.boxBSelected
             if (box === "C") this.boxCSelected = true
         },
+    },
+
+    computed: {
+        boxCClasses() {
+            return { active: this.boxCSelected }
+        }
     }
 
 });
