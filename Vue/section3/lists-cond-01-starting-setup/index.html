@@ -55,7 +55,15 @@
         <!-- <li v-for="goal in goals">{{goal}}</li> -->
         <!-- .......... -->
         <!-- we also access index also of element -->
-        <li v-for="(goal,index) in goals">{{goal+" - "+index}}</li>
+        <li
+          v-for="(goal, index) in goals"
+          @click="removeGoal(index)"
+          :key="goal">
+          <p>{{goal+" - "+index}}</p>
+          <input
+            type="text"
+            @click.stop />
+        </li>
       </ul>
       <ul>
         <!-- objects -->
@@ -64,8 +72,8 @@
         </li>
       </ul>
       <ul>
-        <!-- range of number -->
-        <li v-for="num in 10">{{num}}</li>
+        <!-- range of number,num in 4 -->
+        <li v-for="(num,index) in 4">{{num}}</li>
       </ul>
       <!-- ................................... -->
     </section>
