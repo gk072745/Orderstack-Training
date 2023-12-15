@@ -13,10 +13,21 @@ const app = Vue.createApp({
     // name(newValue,oldValue) two args....
     name(value) {
       this.fullName = value ? value + " " + "Kumar" : ""
+    },
+    // watcher is poworful when we want to do something other like
+    // like http request if something changes or timers
+    counter(value) {
+      // value > 50 && (this.counter = 0)
+      if (value > 50) {
+        const that = this;
+        setTimeout(() => {
+          that.counter = 0
+        }, 2000);
+      };
     }
   },
 
-  // dont call unnecessary, improve performance...
+  // dont call unnecessary, improve performance... useful when we only want comnputation....
   // computed: {
   //   fullName() {
   //     console.log(this.name)
