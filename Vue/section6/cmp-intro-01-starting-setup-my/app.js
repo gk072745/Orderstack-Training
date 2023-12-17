@@ -15,8 +15,36 @@ const app = Vue.createApp({
                     email: "julie@localhost.com"
                 }
             ],
-            detailsAreVisible: true
         }
+    },
+
+
+})
+// creating component
+// component name, config object
+app.component('friend-contact', {
+    template: `
+      <li>
+          <h2>{{friend.name}}</h2>
+          <button @click="toggleDetails">
+            {{detailsAreVisible?'Hide':'Show'}} Details
+          </button>
+          <ul v-if="detailsAreVisible">
+            <li><strong>Phone:</strong> {{friend.phone}}</li>
+            <li><strong>Email:</strong> {{friend.email}}</li>
+          </ul>
+        </li>
+    `,
+    data() {
+        return {
+            detailsAreVisible: false,
+            friend: {
+                id: "manuel",
+                name: 'Manuel Lorenz',
+                phone: '12323-13123-123',
+                email: "manuel@localhost.com"
+            },
+        };
     },
 
     methods: {
@@ -24,7 +52,7 @@ const app = Vue.createApp({
             this.detailsAreVisible = !this.detailsAreVisible
         }
     }
-})
+});
 
 
 app.mount("#app")

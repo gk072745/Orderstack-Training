@@ -25,18 +25,8 @@
     </header>
     <section id="app">
       <ul>
-        <li
-          v-for="{id,name,email,phone} in friends"
-          :key="id">
-          <h2>{{name}}</h2>
-          <button @click="toggleDetails">
-            {{detailsAreVisible?'Hide':'Show'}} Details
-          </button>
-          <ul v-if="detailsAreVisible">
-            <li><strong>Phone:</strong> {{phone}}</li>
-            <li><strong>Email:</strong> {{email}}</li>
-          </ul>
-        </li>
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
       </ul>
     </section>
   </body>
