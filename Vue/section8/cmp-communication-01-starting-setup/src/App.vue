@@ -9,13 +9,13 @@
         name="Manuel Lorenz"
         phone="0123 45678 90"
         email="manuel@localhost.com"
-        is-favorite="1"></friend-contact>
+        is-favorite="true"></friend-contact>
       <friend-contact
         id="julie"
         name="Julie Jones"
         phone="0987 654421 21"
         email="julie@localhost.com"
-        is-favorite="0"></friend-contact>
+        is-favorite="false"></friend-contact>
     </ul>
   </section>
 </template>

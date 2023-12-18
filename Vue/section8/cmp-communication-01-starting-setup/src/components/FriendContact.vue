@@ -20,7 +20,44 @@
 
 <script>
 export default {
-  props: ["id", "name", "phone", "email", "isFavorite"],
+  // props: ["id", "name", "phone", "email", "isFavorite"],
+
+  // props: {
+  //   id: String,
+  //   name: String,
+  //   phone: String,
+  //   email: String,
+  //   isFavorite: String,
+  // },
+
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    isFavorite: {
+      type: Boolean,
+      required: false,
+      // default:function(){}
+      default: false,
+      validator: function (value) {
+        return value === "1" || value === "0";
+      },
+    },
+  },
+
   data() {
     return {
       detailsAreVisible: false,
