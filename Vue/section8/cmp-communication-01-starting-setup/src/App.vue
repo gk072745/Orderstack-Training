@@ -5,17 +5,26 @@
     </header>
     <ul>
       <friend-contact
-        id="manuel"
+        v-for="{ id, name, phone, email } in friends"
+        :key="id"
+        :name="name"
+        :phone-number="phone"
+        :email="email"
+        :is-favorite="true"></friend-contact>
+      <!-- for none sting or dynamic values we need to bind with react like is favorite -->
+
+      <!-- id="manuel"
         name="Manuel Lorenz"
         phone="0123 45678 90"
         email="manuel@localhost.com"
-        is-favorite="true"></friend-contact>
-      <friend-contact
+        :is-favorite="true" -->
+
+      <!-- <friend-contact
         id="julie"
         name="Julie Jones"
         phone="0987 654421 21"
         email="julie@localhost.com"
-        is-favorite="false"></friend-contact>
+        :is-favorite="false"></friend-contact> -->
     </ul>
   </section>
 </template>
