@@ -3,14 +3,19 @@
     <header>
       <h1>My Friends</h1>
     </header>
+    <new-friend @add-contact="addContact"> </new-friend>
     <ul>
       <friend-contact
-        v-for="{ id, name, phone, email } in friends"
+        v-for="{ id, name, phone, email, isFavorite } in friends"
         :key="id"
+        :id="id"
         :name="name"
         :phone-number="phone"
         :email="email"
-        :is-favorite="true"></friend-contact>
+        :is-favorite="isFavorite"
+        @toggle-favorite="toggleFavoriteStatus"
+        @delete="deleteContact"></friend-contact>
+
       <!-- for none sting or dynamic values we need to bind with react like is favorite -->
 
       <!-- id="manuel"
@@ -30,7 +35,9 @@
 </template>
 
 <script>
+import NewFriend from "./components/NewFriend.vue";
 export default {
+  components: { NewFriend },
   data() {
     return {
       friends: [
@@ -39,15 +46,39 @@ export default {
           name: "Manuel Lorenz",
           phone: "0123 45678 90",
           email: "manuel@localhost.com",
+          isFavorite: true,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "0987 654421 21",
           email: "julie@localhost.com",
+          isFavorite: false,
         },
       ],
     };
+  },
+  methods: {
+    toggleFavoriteStatus(id) {
+      const identifiedFriend = this.friends.find((friend) => friend.id === id);
+      identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
+      console.log(identifiedFriend);
+    },
+
+    addContact(name, phone, email) {
+      const newFriendContact = {
+        id: new Date().toISOString(),
+        name,
+        phone,
+        email,
+        isFavorite: false,
+      };
+
+      this.friends.push(newFriendContact);
+    },
+    deleteContact(id) {
+      this.friends = this.friends.filter((friend) => friend.id !== id);
+    },
   },
 };
 </script>
@@ -78,7 +109,8 @@ header {
   padding: 0;
   list-style: none;
 }
-#app li {
+#app li,
+#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
