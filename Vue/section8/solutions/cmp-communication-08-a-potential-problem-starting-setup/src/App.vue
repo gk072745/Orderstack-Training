@@ -4,7 +4,7 @@
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
     ></active-element>
-    <knowledge-base></knowledge-base>
+    <knowledge-base :topics="topics" @select-topic="activateTopic"></knowledge-base>
   </div>
 </template>
 
@@ -32,14 +32,6 @@ export default {
       activeTopic: null,
     };
   },
-  // providing data directly like context api
-  provide() {
-    return {
-      topics: this.topics,
-      selectTopic: this.activateTopic,
-    };
-  },
-
   methods: {
     activateTopic(topicId) {
       this.activeTopic = this.topics.find((topic) => topic.id === topicId);

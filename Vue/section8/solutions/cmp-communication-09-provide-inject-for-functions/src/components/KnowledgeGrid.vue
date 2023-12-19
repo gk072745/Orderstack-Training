@@ -13,6 +13,5 @@
 <script>
 export default {
   inject: ['topics'],
-  emits: ['select-topic'],
 };
 </script>
