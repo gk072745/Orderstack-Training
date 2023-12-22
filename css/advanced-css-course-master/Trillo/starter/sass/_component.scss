@@ -1,0 +1,76 @@
+//////////////////////////////
+/// // logo
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+///////////////////////////
+/// ///SEARCH
+.search {
+  background-color: orangered;
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-left: -3.25rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-3);
+    }
+  }
+
+  &_button {
+    border: none;
+    background-color: var(--color-grey-light-2);
+
+    &:focus {
+    }
+  }
+
+  &_icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+//////////////////////////
+/// //USER NAVIGATION
+
+.user-nav {
+  background-color: greenyellow;
+  &__icon-box {
+  }
+
+  &-icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  &__notification {
+  }
+
+  &__user {
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+  &__user-name {
+    height: 3.75rem;
+  }
+}
